@@ -1,11 +1,18 @@
-from electricity import electricity_bill
+def electricity_bill(customer_name, units_consumed, rate_per_unit):
+    total_amount = units_consumed * rate_per_unit
 
-def test_electricity_bill():
-    expected_output = (
-        "Customer Name: Rahul\n"
-        "Units Consumed: 120\n"
-        "Rate per Unit: 5\n"
-        "Total Bill Amount: 600"
+    result = (
+        f"Customer Name: {customer_name}\n"
+        f"Units Consumed: {units_consumed}\n"
+        f"Rate per Unit: {rate_per_unit}\n"
+        f"Total Bill Amount: {total_amount}"
     )
+    return result
 
-    assert electricity_bill("Rahul", 120, 5) == expected_output
+
+if __name__ == "__main__":
+    customer_name = "Rahul"
+    units_consumed = 120
+    rate_per_unit = 5
+
+    print(electricity_bill(customer_name, units_consumed, rate_per_unit))
